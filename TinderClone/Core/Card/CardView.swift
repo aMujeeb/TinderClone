@@ -14,14 +14,18 @@ struct CardView: View {
     
     var body: some View {
         ZStack(alignment : .bottom) { // Stack One over other views
-            Image(.monica)
-                .resizable()
+            ZStack {
+                Image(.astonMartin)
+                    .resizable()
                 .scaledToFill()
+                
+                SwipeActionIndicatorView(xOffset: $xOffset)
+            }
             
             UserInfoView()
                 .padding(.horizontal)
         }
-        .frame(width: mCardWidth, height: mCardHeight)
+        .frame(width: SizeConstants.mCardWidth, height: SizeConstants.mCardHeight)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .offset(x:xOffset)
         .rotationEffect(.degrees(mDegrees))
@@ -34,23 +38,6 @@ struct CardView: View {
     }
 }
 
-//Extracting properties to an extention. Move it into a class later as Utils or common components, constants
-private extension CardView {
-    //Making relative to device view size
-    
-    var mScreenCutOff : CGFloat {
-        (UIScreen.main.bounds.width / 2) * 0.8 //Proven value :)
-    }
-    
-    private var mCardWidth : CGFloat {
-        UIScreen.main.bounds.width - 20
-    }
-    
-    private var mCardHeight : CGFloat {
-        UIScreen.main.bounds.height / 1.45
-    }
-}
-
 private extension CardView {
     func onDragChanged(_ value: _ChangedGesture<DragGesture>.Value) {
         xOffset = value.translation.width
@@ -60,7 +47,7 @@ private extension CardView {
     func onDragEnded(_ value: _ChangedGesture<DragGesture>.Value) {
         let width = value.translation.width
         
-        if abs(width) <= abs(mScreenCutOff) { // To based on screen width
+        if abs(width) <= abs(SizeConstants.mScreenCutOff) { // To based on screen width
             xOffset = 0
             mDegrees = 0
         }

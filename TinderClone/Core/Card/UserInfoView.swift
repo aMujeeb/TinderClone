@@ -9,17 +9,16 @@ import SwiftUI
 
 struct UserInfoView: View {
     var body: some View {
-        VStack(alignment : .leading) {
+        VStack(alignment : .center) {
             HStack{
-                Text("Megan")
+                Text("Aston Martin")
                     .font(.title)
-                    .fontWeight(.heavy)
+                    .fontWeight(.bold)
+                    .lineLimit(2)
                 
-                Text("37")
+                Text("2022")
                     .font(.title)
                     .fontWeight(.semibold)
-                
-                Spacer()
                 
                 Button {
                     print("Debug Show profile here..")
@@ -27,15 +26,15 @@ struct UserInfoView: View {
                     Image(systemName: "arrow.up.circle")
                         .fontWeight(.bold)
                         .imageScale(.large)
-                }
+                }.padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0))
             }
             
-            Text("Actress | Nurse")
+            Text("Vantage | V10")
                 .font(.subheadline)
                 .lineLimit(2)
         }
         .foregroundStyle(.white)
-        .padding(EdgeInsets(top: 16, leading: 48, bottom: 16, trailing: 48))
+        .padding(EdgeInsets(top: 16, leading: 32, bottom: 16, trailing: 32))
         .background(
             LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
         )
