@@ -12,12 +12,26 @@ struct CardView: View {
     @State private var xOffset: CGFloat = 0
     @State private var mDegrees: Double = 0
     
+    @State private var mCurrentImageIndex : Int = 0
+    @State private var mockImages = [
+        "aston_martin",
+        "aston_martin_4",
+        "aston_martin_2",
+        "aston_martin_3",
+    ]
+    
+    
     var body: some View {
         ZStack(alignment : .bottom) { // Stack One over other views
-            ZStack {
-                Image(.astonMartin)
+            ZStack(alignment : .top) {
+                Image(mockImages[mCurrentImageIndex])
                     .resizable()
                 .scaledToFill()
+                .overlay {
+                    ImageScrollingOverlay(currentImageIndex: $mCurrentImageIndex, mImageCount: mockImages.count)
+                }
+                
+                CardImageIndicator(currentImageIndex: mCurrentImageIndex, mImageCount: mockImages.count)
                 
                 SwipeActionIndicatorView(xOffset: $xOffset)
             }
@@ -38,6 +52,25 @@ struct CardView: View {
     }
 }
 
+//For swiping actions
+private extension CardView {
+    func returnToCenter() {
+        xOffset = 0
+        mDegrees = 0
+    }
+    
+    func swipeRight() {
+        xOffset = 500
+        mDegrees = 12
+    }
+    
+    func swipeLeft() {
+        xOffset = -500
+        mDegrees = -12
+    }
+}
+
+
 private extension CardView {
     func onDragChanged(_ value: _ChangedGesture<DragGesture>.Value) {
         xOffset = value.translation.width
@@ -48,8 +81,14 @@ private extension CardView {
         let width = value.translation.width
         
         if abs(width) <= abs(SizeConstants.mScreenCutOff) { // To based on screen width
-            xOffset = 0
-            mDegrees = 0
+            returnToCenter()
+            return // Rerun to center and stop and avoid reaching below condition statement
+        }
+        
+        if width >= SizeConstants.mScreenCutOff {
+            swipeRight()
+        } else {
+            swipeLeft()
         }
     }
 }

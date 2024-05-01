@@ -11,6 +11,9 @@
 		E823E0D82BDFDD8A00EDF9B3 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E0D72BDFDD8A00EDF9B3 /* UserInfoView.swift */; };
 		E823E0DA2BDFF14100EDF9B3 /* SwipeActionIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E0D92BDFF14100EDF9B3 /* SwipeActionIndicatorView.swift */; };
 		E823E0DD2BDFFA8600EDF9B3 /* SizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E823E0DC2BDFFA8600EDF9B3 /* SizeConstants.swift */; };
+		E82D25472BE1C70900339FE2 /* ImageScrollingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D25462BE1C70900339FE2 /* ImageScrollingOverlay.swift */; };
+		E82D25492BE1CEE100339FE2 /* CardImageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D25482BE1CEE100339FE2 /* CardImageIndicator.swift */; };
+		E82D254B2BE1D55500339FE2 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D254A2BE1D55500339FE2 /* CardStackView.swift */; };
 		E8648BE32BDD380D00AA7B15 /* TinderCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8648BE22BDD380D00AA7B15 /* TinderCloneApp.swift */; };
 		E8648BE52BDD380D00AA7B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8648BE42BDD380D00AA7B15 /* ContentView.swift */; };
 		E8648BE72BDD380F00AA7B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8648BE62BDD380F00AA7B15 /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 		E823E0D72BDFDD8A00EDF9B3 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		E823E0D92BDFF14100EDF9B3 /* SwipeActionIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionIndicatorView.swift; sourceTree = "<group>"; };
 		E823E0DC2BDFFA8600EDF9B3 /* SizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstants.swift; sourceTree = "<group>"; };
+		E82D25462BE1C70900339FE2 /* ImageScrollingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollingOverlay.swift; sourceTree = "<group>"; };
+		E82D25482BE1CEE100339FE2 /* CardImageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageIndicator.swift; sourceTree = "<group>"; };
+		E82D254A2BE1D55500339FE2 /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
 		E8648BDF2BDD380D00AA7B15 /* TinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8648BE22BDD380D00AA7B15 /* TinderCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneApp.swift; sourceTree = "<group>"; };
 		E8648BE42BDD380D00AA7B15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 				E823E0D52BDFDA1500EDF9B3 /* CardView.swift */,
 				E823E0D72BDFDD8A00EDF9B3 /* UserInfoView.swift */,
 				E823E0D92BDFF14100EDF9B3 /* SwipeActionIndicatorView.swift */,
+				E82D25462BE1C70900339FE2 /* ImageScrollingOverlay.swift */,
+				E82D25482BE1CEE100339FE2 /* CardImageIndicator.swift */,
+				E82D254A2BE1D55500339FE2 /* CardStackView.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -240,9 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82D25492BE1CEE100339FE2 /* CardImageIndicator.swift in Sources */,
+				E82D25472BE1C70900339FE2 /* ImageScrollingOverlay.swift in Sources */,
 				E8648BFB2BDD432000AA7B15 /* MainTabView.swift in Sources */,
 				E823E0DA2BDFF14100EDF9B3 /* SwipeActionIndicatorView.swift in Sources */,
 				E8648BE52BDD380D00AA7B15 /* ContentView.swift in Sources */,
+				E82D254B2BE1D55500339FE2 /* CardStackView.swift in Sources */,
 				E823E0D62BDFDA1500EDF9B3 /* CardView.swift in Sources */,
 				E823E0DD2BDFFA8600EDF9B3 /* SizeConstants.swift in Sources */,
 				E8648BE32BDD380D00AA7B15 /* TinderCloneApp.swift in Sources */,
