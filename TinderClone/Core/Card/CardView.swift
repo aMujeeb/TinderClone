@@ -12,18 +12,29 @@ struct CardView: View {
     @State private var xOffset: CGFloat = 0
     @State private var mDegrees: Double = 0
     
+    @State private var mCurrentImageIndex : Int = 0
+    
+    let mModel : CardModel
+   
+    @ObservedObject var mViewModel: CardViewModel
+    
     var body: some View {
         ZStack(alignment : .bottom) { // Stack One over other views
-            ZStack {
-                Image(.astonMartin)
+            ZStack(alignment : .top) {
+                Image(user.profileImageUrls[mCurrentImageIndex])
                     .resizable()
                 .scaledToFill()
+                .frame(width: SizeConstants.mCardWidth, height: SizeConstants.mCardHeight)
+                .overlay {
+                    ImageScrollingOverlay(currentImageIndex: $mCurrentImageIndex, mImageCount: imageCount)
+                }
+                
+                CardImageIndicator(currentImageIndex: mCurrentImageIndex, mImageCount: imageCount)
                 
                 SwipeActionIndicatorView(xOffset: $xOffset)
             }
             
-            UserInfoView()
-                .padding(.horizontal)
+            UserInfoView(mUser: user)
         }
         .frame(width: SizeConstants.mCardWidth, height: SizeConstants.mCardHeight)
         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -38,6 +49,52 @@ struct CardView: View {
     }
 }
 
+//For swiping actions
+private extension CardView {
+    func returnToCenter() {
+        xOffset = 0
+        mDegrees = 0
+    }
+    
+    func swipeRight() {
+        
+        /*  //Old School
+            xOffset = 500
+            mDegrees = 12
+            //Remove card via viewModel
+            mViewModel.removeCard(mModel)
+            
+        */
+        //These were animations introduced with IOS 17
+        withAnimation {
+            xOffset = 500
+            mDegrees = 12
+        }
+        completion: {
+            mViewModel.removeCard(mModel)
+        }
+    }
+    
+    func swipeLeft() {
+        
+        /*  //Old School
+            xOffset = -500
+            mDegrees = -12
+            //Remove card via viewModel
+            mViewModel.removeCard(mModel)
+            
+        */
+        withAnimation {
+            xOffset = -500
+            mDegrees = -12
+        }
+        completion: {
+            mViewModel.removeCard(mModel)
+        }
+    }
+}
+
+
 private extension CardView {
     func onDragChanged(_ value: _ChangedGesture<DragGesture>.Value) {
         xOffset = value.translation.width
@@ -48,12 +105,35 @@ private extension CardView {
         let width = value.translation.width
         
         if abs(width) <= abs(SizeConstants.mScreenCutOff) { // To based on screen width
-            xOffset = 0
-            mDegrees = 0
+            returnToCenter()
+            return // Rerun to center and stop and avoid reaching below condition statement
+        }
+        
+        if width >= SizeConstants.mScreenCutOff {
+            swipeRight()
+        } else {
+            swipeLeft()
         }
     }
 }
 
+private extension CardView {
+    var user : UserCar {
+        return mModel.user
+    }
+    
+    var imageCount : Int {
+        return user.profileImageUrls.count
+    }
+}
+
 #Preview {
-    CardView()
+    CardView(
+        mModel: CardModel(
+            user: MockData.users[1]
+        ),
+        mViewModel: CardViewModel(
+            service: CardService()
+        )
+    )
 }

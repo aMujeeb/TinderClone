@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct UserInfoView: View {
+    let mUser : UserCar
+    
     var body: some View {
         VStack(alignment : .center) {
             HStack{
-                Text("Aston Martin")
+                Text(mUser.fullName)
                     .font(.title)
                     .fontWeight(.bold)
                     .lineLimit(2)
                 
-                Text("2022")
+                Text("\(mUser.age)")
                     .font(.title)
                     .fontWeight(.semibold)
                 
@@ -29,7 +31,7 @@ struct UserInfoView: View {
                 }.padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 0))
             }
             
-            Text("Vantage | V10")
+            Text("Some Text")
                 .font(.subheadline)
                 .lineLimit(2)
         }
@@ -42,5 +44,5 @@ struct UserInfoView: View {
 }
 
 #Preview {
-    UserInfoView()
+    UserInfoView(mUser: MockData.users[2])
 }
