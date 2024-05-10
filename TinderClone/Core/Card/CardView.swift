@@ -15,6 +15,8 @@ struct CardView: View {
     @State private var mCurrentImageIndex : Int = 0
     
     let mModel : CardModel
+   
+    @ObservedObject var mViewModel: CardViewModel
     
     var body: some View {
         ZStack(alignment : .bottom) { // Stack One over other views
@@ -55,13 +57,40 @@ private extension CardView {
     }
     
     func swipeRight() {
-        xOffset = 500
-        mDegrees = 12
+        
+        /*  //Old School
+            xOffset = 500
+            mDegrees = 12
+            //Remove card via viewModel
+            mViewModel.removeCard(mModel)
+            
+        */
+        //These were animations introduced with IOS 17
+        withAnimation {
+            xOffset = 500
+            mDegrees = 12
+        }
+        completion: {
+            mViewModel.removeCard(mModel)
+        }
     }
     
     func swipeLeft() {
-        xOffset = -500
-        mDegrees = -12
+        
+        /*  //Old School
+            xOffset = -500
+            mDegrees = -12
+            //Remove card via viewModel
+            mViewModel.removeCard(mModel)
+            
+        */
+        withAnimation {
+            xOffset = -500
+            mDegrees = -12
+        }
+        completion: {
+            mViewModel.removeCard(mModel)
+        }
     }
 }
 
@@ -99,5 +128,12 @@ private extension CardView {
 }
 
 #Preview {
-    CardView(mModel: CardModel(user: MockData.users[1]))
+    CardView(
+        mModel: CardModel(
+            user: MockData.users[1]
+        ),
+        mViewModel: CardViewModel(
+            service: CardService()
+        )
+    )
 }

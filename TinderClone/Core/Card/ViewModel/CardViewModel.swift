@@ -26,4 +26,9 @@ class CardViewModel : ObservableObject {
             print("DEBUG: Failed to fetch cards with error \(error)")
         }
     }
+    
+    func removeCard(_ card : CardModel) {
+        guard let index = mCardModels.firstIndex(where: { $0.id == card.id }) else { return }
+        mCardModels.remove(at: index)
+    }
 }

@@ -11,6 +11,6 @@ struct CardModel {
     let user : UserCar
 }
 
-extension CardModel : Identifiable {
+extension CardModel : Identifiable, Hashable {
     var id : String { return user.id }
 }
