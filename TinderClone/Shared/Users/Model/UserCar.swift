@@ -12,4 +12,5 @@ struct UserCar: Identifiable, Hashable {
     let fullName : String
     var age : Int
     var profileImageUrls : [String]
+    let bio : String
 }

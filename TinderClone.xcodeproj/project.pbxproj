@@ -19,6 +19,7 @@
 		E82D25472BE1C70900339FE2 /* ImageScrollingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D25462BE1C70900339FE2 /* ImageScrollingOverlay.swift */; };
 		E82D25492BE1CEE100339FE2 /* CardImageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D25482BE1CEE100339FE2 /* CardImageIndicator.swift */; };
 		E82D254B2BE1D55500339FE2 /* CardStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82D254A2BE1D55500339FE2 /* CardStackView.swift */; };
+		E859414A2BEF2052006095D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85941492BEF2052006095D7 /* ProfileView.swift */; };
 		E8648BE32BDD380D00AA7B15 /* TinderCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8648BE22BDD380D00AA7B15 /* TinderCloneApp.swift */; };
 		E8648BE52BDD380D00AA7B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8648BE42BDD380D00AA7B15 /* ContentView.swift */; };
 		E8648BE72BDD380F00AA7B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8648BE62BDD380F00AA7B15 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		E82D25462BE1C70900339FE2 /* ImageScrollingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollingOverlay.swift; sourceTree = "<group>"; };
 		E82D25482BE1CEE100339FE2 /* CardImageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageIndicator.swift; sourceTree = "<group>"; };
 		E82D254A2BE1D55500339FE2 /* CardStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackView.swift; sourceTree = "<group>"; };
+		E85941492BEF2052006095D7 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E8648BDF2BDD380D00AA7B15 /* TinderClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8648BE22BDD380D00AA7B15 /* TinderCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderCloneApp.swift; sourceTree = "<group>"; };
 		E8648BE42BDD380D00AA7B15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		E85941482BEF2038006095D7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E85941492BEF2052006095D7 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		E8648BD62BDD380D00AA7B15 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		E8648BF12BDD414F00AA7B15 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E85941482BEF2038006095D7 /* Profile */,
 				E8648BF62BDD42CE00AA7B15 /* Card */,
 				E8648BF52BDD423D00AA7B15 /* TabBar */,
 			);
@@ -296,6 +307,7 @@
 				E8648BE52BDD380D00AA7B15 /* ContentView.swift in Sources */,
 				E87E744C2BEE678600C03CAD /* SwipeActionButtonsView.swift in Sources */,
 				E821C0D52BE8EB4600B6ABE5 /* CardModel.swift in Sources */,
+				E859414A2BEF2052006095D7 /* ProfileView.swift in Sources */,
 				E82D254B2BE1D55500339FE2 /* CardStackView.swift in Sources */,
 				E823E0D62BDFDA1500EDF9B3 /* CardView.swift in Sources */,
 				E821C0D82BE8EC7500B6ABE5 /* CardViewModel.swift in Sources */,
