@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80581FA2BF7866900184C7B /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80581F92BF7866900184C7B /* CurrentUserProfileView.swift */; };
+		E80581FC2BF78CB900184C7B /* CurrentUserProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80581FB2BF78CB900184C7B /* CurrentUserProfileHeaderView.swift */; };
+		E80581FF2BF79B2900184C7B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80581FE2BF79B2900184C7B /* EditProfileView.swift */; };
+		E80582012BF7A5AB00184C7B /* ProfileImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80582002BF7A5AB00184C7B /* ProfileImageGridView.swift */; };
 		E821C0D22BE8E4EC00B6ABE5 /* UserCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821C0D12BE8E4EC00B6ABE5 /* UserCar.swift */; };
 		E821C0D52BE8EB4600B6ABE5 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821C0D42BE8EB4600B6ABE5 /* CardModel.swift */; };
 		E821C0D82BE8EC7500B6ABE5 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E821C0D72BE8EC7500B6ABE5 /* CardViewModel.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E80581F92BF7866900184C7B /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
+		E80581FB2BF78CB900184C7B /* CurrentUserProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileHeaderView.swift; sourceTree = "<group>"; };
+		E80581FE2BF79B2900184C7B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		E80582002BF7A5AB00184C7B /* ProfileImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageGridView.swift; sourceTree = "<group>"; };
 		E821C0D12BE8E4EC00B6ABE5 /* UserCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCar.swift; sourceTree = "<group>"; };
 		E821C0D42BE8EB4600B6ABE5 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		E821C0D72BE8EC7500B6ABE5 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
@@ -64,6 +72,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E80581F72BF7862100184C7B /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E85941492BEF2052006095D7 /* ProfileView.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		E80581F82BF7864900184C7B /* CurrentUserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E80581F92BF7866900184C7B /* CurrentUserProfileView.swift */,
+				E80581FB2BF78CB900184C7B /* CurrentUserProfileHeaderView.swift */,
+			);
+			path = CurrentUserProfile;
+			sourceTree = "<group>";
+		};
+		E80581FD2BF79AE600184C7B /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				E80581FE2BF79B2900184C7B /* EditProfileView.swift */,
+				E80582002BF7A5AB00184C7B /* ProfileImageGridView.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		E821C0CF2BE8E4BA00B6ABE5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +151,9 @@
 		E85941482BEF2038006095D7 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E85941492BEF2052006095D7 /* ProfileView.swift */,
+				E80581FD2BF79AE600184C7B /* EditProfile */,
+				E80581F82BF7864900184C7B /* CurrentUserProfile */,
+				E80581F72BF7862100184C7B /* UserProfile */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -297,9 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80581FF2BF79B2900184C7B /* EditProfileView.swift in Sources */,
 				E82D25492BE1CEE100339FE2 /* CardImageIndicator.swift in Sources */,
+				E80581FA2BF7866900184C7B /* CurrentUserProfileView.swift in Sources */,
 				E821C0DB2BE8F38D00B6ABE5 /* CardService.swift in Sources */,
 				E82D25472BE1C70900339FE2 /* ImageScrollingOverlay.swift in Sources */,
+				E80581FC2BF78CB900184C7B /* CurrentUserProfileHeaderView.swift in Sources */,
 				E8648BFB2BDD432000AA7B15 /* MainTabView.swift in Sources */,
 				E821C0DD2BE8F7DE00B6ABE5 /* MockData.swift in Sources */,
 				E87E744E2BEE6CC000C03CAD /* SwipeAction.swift in Sources */,
@@ -308,6 +347,7 @@
 				E87E744C2BEE678600C03CAD /* SwipeActionButtonsView.swift in Sources */,
 				E821C0D52BE8EB4600B6ABE5 /* CardModel.swift in Sources */,
 				E859414A2BEF2052006095D7 /* ProfileView.swift in Sources */,
+				E80582012BF7A5AB00184C7B /* ProfileImageGridView.swift in Sources */,
 				E82D254B2BE1D55500339FE2 /* CardStackView.swift in Sources */,
 				E823E0D62BDFDA1500EDF9B3 /* CardView.swift in Sources */,
 				E821C0D82BE8EC7500B6ABE5 /* CardViewModel.swift in Sources */,

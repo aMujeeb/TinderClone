@@ -66,7 +66,7 @@ struct ProfileView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Essentials ").fontWeight(.semibold)
+                    Text("Essentials ").fontWeight(.semibold )
                     
                     HStack {
                         Image(systemName: "person")
